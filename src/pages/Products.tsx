@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -30,7 +29,7 @@ const Products = () => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Навигация */}
-      <header className="border-b border-gray-200 py-4">
+      <header className="fixed w-full bg-white border-b border-gray-200 py-4 z-10">
         <div className="container mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,6 +48,9 @@ const Products = () => {
           </Button>
         </div>
       </header>
+
+      {/* Добавляем отступ для контента, чтобы он не был скрыт за фиксированным хедером */}
+      <div className="pt-16"></div>
 
       {/* Основная секция */}
       <main className="flex-1 py-12">
@@ -172,7 +174,7 @@ const Products = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-gray-600">
-              © {new Date().getFullYear()} Apple Gift Cards. Все права защищены.
+              {new Date().getFullYear()} Apple Gift Cards. Все права защищены.
             </p>
             <div className="flex gap-6 mt-4 md:mt-0">
               <Link to="/" className="text-sm text-gray-600 hover:text-gray-900">Главная</Link>

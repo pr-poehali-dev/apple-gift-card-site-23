@@ -1,7 +1,6 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { 
+import {
   Accordion,
   AccordionContent,
   AccordionItem,
@@ -64,7 +63,7 @@ const Guide = () => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Навигация */}
-      <header className="border-b border-gray-200 py-4">
+      <header className="fixed w-full bg-white border-b border-gray-200 py-4 z-10">
         <div className="container mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -83,6 +82,9 @@ const Guide = () => {
           </Button>
         </div>
       </header>
+
+      {/* Добавляем отступ для контента, чтобы он не был скрыт за фиксированным хедером */}
+      <div className="pt-16"></div>
 
       {/* Основная секция */}
       <main className="flex-1 py-12">
@@ -205,7 +207,7 @@ const Guide = () => {
             
             <Accordion type="single" collapsible className="w-full">
               {faq.map((item, index) => (
-                <AccordionItem key={index} value={`item-${index}`}>
+                <AccordionItem key={index} value={`item-${index}` }>
                   <AccordionTrigger className="text-left">{item.question}</AccordionTrigger>
                   <AccordionContent>
                     <p className="text-gray-600">{item.answer}</p>
